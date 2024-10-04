@@ -1,6 +1,6 @@
 # Basic example 
 
-Commands to run:
+Commands to run for yourself:
 
 ```bash
 # Setup conda environment
@@ -14,8 +14,8 @@ conda install -c conda-forge -c bioconda snakemake graphviz matplotlib  -y
 snakemake --dag | dot -T png > dag.png
 
 # Inspect the steps that would be run in a workflow but DON'T run them
-snakemake --dry-run --printshellcmds
+snakemake --dry-run --printshellcmds # same as `snakemake -np`
 
-# Run workflow
-snakemake
+# Run workflow 
+snakemake foo.png
 ```

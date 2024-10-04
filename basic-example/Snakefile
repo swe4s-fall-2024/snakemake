@@ -1,6 +1,3 @@
-rule all:
-  input:  "foo.png"
-
 rule A:
   input:  "foo.txt"
   output: "foo.png"
