@@ -1,15 +1,8 @@
 # Fire example
 
-Suppose we want to look at a histogram of fires in different countries using the `Argrofood_co2_emission.csv` dataset. 
-First download the dataset via either `curl` or `wget`. 
-Via `curl`:
+Suppose we want to look at a histogram of fires in different countries using the `fire_data.csv` dataset. 
 
-```bash
-# Download fire data via curl or wget. Via curl:
-curl -L https://docs.google.com/uc\?export\=download\&id\=1Wytf3ryf9EtOwaloms8HEzLG0yjtRqxr > fire_data.csv
-```
-
-Setup the `conda` environment:
+First, setup the `conda` environment:
 
 ```bash
 conda create -n snakemake -y
@@ -101,5 +94,6 @@ snakemake -np {"American Samoa",Andorra}.png
 # See the DAG
 snakemake --dag {"American Samoa",Andorra}.png | dot -T png > dag.png
 ```
+
 
 
