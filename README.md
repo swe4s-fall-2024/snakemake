@@ -1,1 +1,1 @@
-# snakemake
+# Snakemake tutorial and examples
