@@ -48,8 +48,8 @@ Run `snakemake` and tell it which output file you want:
 
 ```bash
 snakemake Afghanistan.png
-# or, if you want to just see what would happen but not actually perform the steps, run `snakemake -np Afghanistan.png
 ```
+if you want to just see what would happen but not actually perform the steps, run `snakemake -np Afghanistan.png`: the `n` tells Snakemake to do a "dry-run" (i.e., not actually run the commands) and the `p` tells Snakemake to print the shell commands that would be executed for each rule.
 
 In the `Snakefile` above, we take advantage of variables `{input}` and `{output}` that resolve to the values of the input and output directives. 
 NOTE: Snakemake abuses the strings wrapped in curly brackets syntax. 
@@ -82,7 +82,8 @@ rule country_plot_hist:
     'python hist.py {input} {output} {wildcards.country} Fires Freq'
 ```
 
-When Snakemake determines that this rule can be applied to generate a target file by replacing the wildcard `{country}` in the output file with an appropriate value, it will propagate that value to all occurrences of `{country}` in the input files and thereby determine the necessary input for the resulting job.
+When Snakemake determines that this rule can be applied to generate a target file by replacing the wildcard `{country}` in the output file with an appropriate value, it will propagate that value to all occurrences of `{country}` in the input files and thereby determine the necessary input for the resulting job. 
+It will also propagate that value to all occurrences of `{wildcards.country}` in the shell commands
 
 You can now use Snakemake to plot the data from Afghanistan and multiple countries via, e.g.,
 
